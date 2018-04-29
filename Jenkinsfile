@@ -10,7 +10,7 @@ node('linux') {
 		sh 'ant -f build.xml -v'   
 	}
 	stage('Deploy') {    
-		sh 'aws s3 cp rectangle-12.jar s3://jenkins/data/'
+		sh 'aws s3 cp rectangle-11.jar s3://jenkins/data/'
 	}
 	stage('Report') {
 		withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'jenkins', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
